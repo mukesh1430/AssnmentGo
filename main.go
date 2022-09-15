@@ -14,7 +14,7 @@ type User struct {
 	AccountNumber string
 }
 
-var balance = 0
+var balance = 1000
 
 func AddMoney() {
 	fmt.Println("Enter amount to deposit")
@@ -22,7 +22,7 @@ func AddMoney() {
 
 	fmt.Scan(&amount)
 
-	balance = amount
+	balance += amount
 
 	fmt.Printf("Available balance is %d", balance)
 
