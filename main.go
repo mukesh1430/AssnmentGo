@@ -14,6 +14,38 @@ type User struct {
 	AccountNumber string
 }
 
+var balance = 0
+
+func AddMoney() {
+	fmt.Println("Enter amount to deposit")
+	var amount int
+
+	fmt.Scan(&amount)
+
+	balance = amount
+
+	fmt.Printf("Available balance is %d", balance)
+
+}
+
+func WithdrawMoney() {
+	fmt.Println("Enter amount to withdraw")
+	var amount int
+
+	fmt.Scan(&amount)
+
+	balance = balance - amount
+
+	fmt.Printf("Available balance is %d", balance)
+
+}
+
+func checkBalance() {
+
+	fmt.Printf("Available balance is %d", balance)
+
+}
+
 func SuccessfullLogin() {
 	var option string
 
@@ -23,10 +55,14 @@ func SuccessfullLogin() {
 	switch option {
 	case "1":
 		fmt.Println("Please withdraw money")
+
+		WithdrawMoney()
 	case "2":
 		fmt.Println("Please deposit money")
+		AddMoney()
 	case "3":
 		fmt.Println("Please check balance")
+		checkBalance()
 	case "4":
 		fmt.Println("exiting...")
 		os.Exit(3)
